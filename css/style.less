@@ -1,0 +1,58 @@
+@blue: #00214D;
+@risk-red: #FF0000;
+
+button:focus {outline:0 !important;}
+
+h4{
+	text-align: center;
+}
+
+.btn-risk{
+	-webkit-transition: all 0.2s;
+	background-color: white;
+	color: @risk-red;
+	border: @risk-red solid 1px;
+	outline: 0;
+}
+
+.btn-risk.active{
+	background-color: @risk-red;
+	color: white;
+}
+
+.btn-risk:hover{
+	 -webkit-transform: scale(1.1);
+	 color: @risk-red;
+}
+
+.btn-risk.active:hover{
+	 color: white;
+}
+
+
+.bar{
+	height: 200px;
+	background-color: #DADCDD;
+	position: relative;
+
+	.bar-val{
+		height: 40px;
+		width: 100%;
+		background: @risk-red;
+		position: absolute;
+		bottom: 0;
+		left:0;
+	}
+}
+
+.percentage{
+	font-size: 20px;
+	color: @risk-red;
+	text-align: center;
+	margin-top: 20px;
+	font-weight: bold;
+
+	.circle-percent{
+		color: white;
+	}
+}

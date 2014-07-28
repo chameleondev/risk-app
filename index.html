@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="risk-tool">
+<head>
+	<meta charset="UTF-8">
+	<title>Risk Tool</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+	
+</head>
+<body>
+
+	<div class="container" ng-controller="testCtrl">
+
+		<div class="page-header">
+		  	<h1>Risk Assessment Tool</h1>
+		</div>
+
+		<div class="row">
+				
+			<div class="col-md-4">
+
+				<div class="checkbox" ng-repeat="condition in conditions">
+				  <label>
+				    <input type="checkbox" name="selectedConditions[]" value="condition.name" ng-model="condition.selected">
+				    {{condition.name}}
+				  </label>
+				</div>
+
+
+				<!-- <div>
+					<label for="">
+						<input type="range" name="points" min="1" max="80">
+						Age
+					</label>
+				</div> -->
+
+
+
+
+
+			</div>
+
+			<div class="col-md-8">
+
+				<div class="row">
+
+					<button type="button" class="active btn btn-risk btn-lg col-md-5 col-md-offset-1">Risk of Ischaemic Stroke,<br>
+					ICH and SEE per 5 Years %
+					</button>
+
+					<button type="button" class="btn btn-risk btn-lg col-md-5 col-md-offset-1">Risk of Major Bleeds<br>
+	  				per 5 Years %</button>
+					
+				</div>
+				
+				
+  				
+
+  				<div class="row" style="margin-top:20px">
+
+  					<div class="col-md-2 col-md-offset-1">
+  						<h4>No Therapy</h4>
+  						<div class="bar">
+  							<div class="bar-val"></div>
+  						</div>
+  						<p class="bar-percent percentage">3.7%</p>
+  					</div>
+
+  					<div class="col-md-2 col-md-offset-1">
+  						<h4>Aspirin</h4>
+  						<div class="bar">
+  							<div class="bar-val"></div>
+  						</div>
+  						<p class="bar-percent percentage">3.7%</p>
+  					</div>
+
+  					<div class="col-md-2 col-md-offset-1">
+  						<h4>VKA</h4>
+  						<div class="bar">
+  							<div class="bar-val"></div>
+  						</div>
+  						<p class="bar-percent percentage">3.7%</p>
+  					</div>
+
+  					<div class="col-md-2 col-md-offset-1">
+  						<h4>NOAK</h4>
+  						<div class="bar">
+  							<div class="bar-val"></div>
+  						</div>
+  						<p class="bar-percent percentage">3.7%</p>
+  					</div>
+  					
+  				</div>
+
+
+				<div class="row" style="margin-top:50px">
+					
+					<div class="col-md-3 col-md-offset-1">
+						<label for="">Visualization options</label>
+					</div>
+
+
+					<div class="col-md-6">
+						<button type="button" class="btn btn-link">Population</button> | 
+						<button type="button" class="btn btn-link">Bars</button> | 
+						<button type="button" class="btn btn-link">Relative</button></div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+	
+	<script type="text/javascript" src="js/vendor/angular.min.js"></script>
+	<script type="text/javascript" src="js/vendor/angular-animate.min.js"></script>
+	<script type="text/javascript" src="js/vendor/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/vendor/underscore-min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+</body>
+</html>
