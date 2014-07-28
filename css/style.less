@@ -29,30 +29,53 @@ h4{
 	 color: white;
 }
 
+.graphs{
 
-.bar{
-	height: 200px;
-	background-color: #DADCDD;
-	position: relative;
+	.bar{
+		height: 200px;
+		background-color: #DADCDD;
+		position: relative;
 
-	.bar-val{
-		height: 40px;
-		width: 100%;
-		background: @risk-red;
-		position: absolute;
-		bottom: 0;
-		left:0;
+		.bar-val{
+			height: 40px;
+			width: 100%;
+			background: @risk-red;
+			position: absolute;
+			bottom: 0;
+			left:0;
+		}
+	}
+
+	.circle{
+		height: 100px;
+		width: 100px;
+		margin: 0 auto;
+		border-radius: 50%;
+		background-color: #DADCDD;
+		position: relative;
+	}
+
+	.percentage{
+		font-size: 20px;
+		color: @risk-red;
+		text-align: center;
+		margin-top: 20px;
+		font-weight: bold;
+
+		.circle-percent{
+			color: white;
+		}
 	}
 }
 
-.percentage{
-	font-size: 20px;
-	color: @risk-red;
-	text-align: center;
-	margin-top: 20px;
-	font-weight: bold;
 
-	.circle-percent{
-		color: white;
-	}
+
+
+.ng-enter{
+	transition: 0.75s;
+	opacity: 0;
+}
+
+.ng-enter-active{
+	opacity: 1;
 }

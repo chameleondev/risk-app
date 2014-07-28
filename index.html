@@ -56,41 +56,7 @@
 				
   				
 
-  				<div class="row" style="margin-top:20px">
-
-  					<div class="col-md-2 col-md-offset-1">
-  						<h4>No Therapy</h4>
-  						<div class="bar">
-  							<div class="bar-val"></div>
-  						</div>
-  						<p class="bar-percent percentage">3.7%</p>
-  					</div>
-
-  					<div class="col-md-2 col-md-offset-1">
-  						<h4>Aspirin</h4>
-  						<div class="bar">
-  							<div class="bar-val"></div>
-  						</div>
-  						<p class="bar-percent percentage">3.7%</p>
-  					</div>
-
-  					<div class="col-md-2 col-md-offset-1">
-  						<h4>VKA</h4>
-  						<div class="bar">
-  							<div class="bar-val"></div>
-  						</div>
-  						<p class="bar-percent percentage">3.7%</p>
-  					</div>
-
-  					<div class="col-md-2 col-md-offset-1">
-  						<h4>NOAK</h4>
-  						<div class="bar">
-  							<div class="bar-val"></div>
-  						</div>
-  						<p class="bar-percent percentage">3.7%</p>
-  					</div>
-  					
-  				</div>
+  				<div class="row graphs" style="margin-top:20px;height:300px" ng-view></div>
 
 
 				<div class="row" style="margin-top:50px">
@@ -101,9 +67,9 @@
 
 
 					<div class="col-md-6">
-						<button type="button" class="btn btn-link">Population</button> | 
-						<button type="button" class="btn btn-link">Bars</button> | 
-						<button type="button" class="btn btn-link">Relative</button></div>
+						<button type="button" class="btn btn-link" go-click="/population">Population</button> | 
+						<button type="button" class="btn btn-link" go-click="/bars">Bars</button> | 
+						<button type="button" class="btn btn-link" go-click="/relative">Relative</button></div>
 
 				</div>
 
