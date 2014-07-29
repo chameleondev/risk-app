@@ -1,4 +1,4 @@
-app.controller('testCtrl',function($scope,$http){
+app.controller('graphsCtrl',function($scope,$http){
 
 	// $http.get('js/data.json').success(function(data){
 
@@ -49,14 +49,27 @@ app.controller('testCtrl',function($scope,$http){
 	}, true);
 
 
-	
-
-	$scope.$watch('selection',function(){
-		$scope.CHA = $scope.selection.length;
-	});
-
 	var arrStrokeAndSEE = [0.69,1.51,3.01,4.41,6.69,10.42,12.85,13.92,14.07,16.08];
 	var arrICHRate = [0.1,0.2,0.6,1.15,1.73];
+	var arrMajorBleedRate = [0.37,0.6,1.15,1.73,2.7,3.233];
+
+	$scope.$watch('selection',function(){
+		$scope.strokeRiskScore = $scope.selection.length;
+		$scope.bleedRiskScore = $scope.selection.length < 6 ? $scope.selection.length : 5;
+		$scope.ichRiskScore = $scope.selection.length < 6 ? $scope.selection.length : 5;
+
+		var strokeBase = arrStrokeAndSEE[$scope.strokeRiskScore] * 5;
+		var ichBase = arrICHRate[$scope.ichRiskScore] * 5;
+		var bleedBase = arrMajorBleedRate[$scope.bleedRiskScore] * 5;
+
+		console.log(strokeBase);
+		console.log(ichBase);
+		console.log(bleedBase);
+	});
+
+	
+
+
 
 
 });
