@@ -2,33 +2,49 @@
 
 	<div class="col-md-2 col-md-offset-1">
 		<h4>No Therapy</h4>
-		<div class="circle">
-			
+
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle"></div>
+			</div>
 		</div>
-		<p class="bar-percent percentage">3.7%</p>
+			
+		<p class="bar-percent percentage">{{probabilityStroke.noTherapy | number:1}}%</p>
 	</div>
 
 	<div class="col-md-2 col-md-offset-1">
 		<h4>Aspirin</h4>
-		<div class="circle">
-			
+
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle" style="height:{{aspirinRadius}}px;width:{{aspirinRadius}}px"></div>
+			</div>
 		</div>
-		<p class="bar-percent percentage">3.7%</p>
+
+		<p class="bar-percent percentage">{{probabilityStroke.aspirin | number:1}}%</p>
 	</div>
 
 	<div class="col-md-2 col-md-offset-1">
 		<h4>VKA</h4>
-		<div class="circle">
-			
+
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle" style="height:{{vkaRadius}}px;width:{{vkaRadius}}px"></div>
+			</div>
 		</div>
-		<p class="bar-percent percentage">3.7%</p>
+
+		<p class="bar-percent percentage">{{probabilityStroke.vka | number:1}}%</p>
 	</div>
 
 	<div class="col-md-2 col-md-offset-1">
 		<h4>NOAK</h4>
-		<div class="circle">
-			
+		
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle" style="height:{{noakRadius}}px;width:{{noakRadius}}px"></div>
+			</div>
 		</div>
-		<p class="bar-percent percentage">3.7%</p>
+
+		<p class="bar-percent percentage">{{probabilityStroke.noak | number:1}}%</p>
 	</div>
 	

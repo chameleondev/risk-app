@@ -37,23 +37,53 @@ h4{
 		position: relative;
 
 		.bar-val{
-			height: 40px;
+			height: 0px;
 			width: 100%;
 			background: @risk-red;
 			position: absolute;
 			bottom: 0;
 			left:0;
+			transition : height 0.5s;
+			-webkit-transition : height 0.5s;
 		}
 	}
 
-	.circle{
-		height: 100px;
-		width: 100px;
-		margin: 0 auto;
-		border-radius: 50%;
-		background-color: #DADCDD;
-		position: relative;
+	.center-circle{
+		display: table;
+		width: 100%;
+
+		.circle-container{
+			height: 150px;
+			display: table-cell;
+			vertical-align: middle;
+
+			.circle{
+				height: 120px;
+				width: 120px;
+				margin: 0 auto;
+				border-radius: 50%;
+				background-color: #DADCDD;
+				position: relative;
+				transition : all 0.5s;
+				-webkit-transition : all 0.5s;
+			}
+
+		}
 	}
+
+	.population{
+		svg{
+			width: 10%;
+
+			g.active{
+				fill: @risk-red;
+			}
+		}
+
+
+	}
+
+	
 
 	.percentage{
 		font-size: 20px;
