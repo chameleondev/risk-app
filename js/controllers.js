@@ -146,19 +146,26 @@ app.controller('graphsCtrl',function($scope,$http){
 
 		// angular.element(document.querySelectorAll('.population')).addClass('hello');
 
-		$('.population g.no-therapy-man').attr('class','no-therapy-man');
-		$('.population g.aspirin-man').attr('class','aspirin-man');
-		$('.population g.vka-man').attr('class','vka-man');
-		$('.population g.noak-man').attr('class','-noak-man');
+		$('.population svg.no-therapy-man').attr('class','no-therapy-man');
+		$('.population svg.aspirin-man').attr('class','aspirin-man');
+		$('.population svg.vka-man').attr('class','vka-man');
+		$('.population svg.noak-man').attr('class','noak-man');
 
-		_.sample($('.population g.no-therapy-man'),$scope.populationClass.noTherapy).attr('class','no-therapy-man active');
+		_.each(_.sample($('.population svg.no-therapy-man'),$scope.populationClass.noTherapy), function(num){
+			num.setAttribute('class','no-therapy-man active');
+		});
 
-		_.sample($('.population g.aspirin-man'),$scope.populationClass.aspirin).attr('class','aspirin-man active');
+		_.each(_.sample($('.population svg.aspirin-man'),$scope.populationClass.aspirin), function(num){
+			num.setAttribute('class','no-therapy-man active');
+		});
 
-		_.sample($('.population g.vka-man'),$scope.populationClass.vka).attr('class','vka-man active');
+		_.each(_.sample($('.population svg.vka-man'),$scope.populationClass.vka), function(num){
+			num.setAttribute('class','no-therapy-man active');
+		});
 
-		_.sample($('.population g.noak-man'),$scope.populationClass.noak).attr('class','noak-man active');
-
+		_.each(_.sample($('.population svg.noak-man'),$scope.populationClass.noak), function(num){
+			num.setAttribute('class','no-therapy-man active');
+		});
 
 	});
 
