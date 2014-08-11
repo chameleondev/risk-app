@@ -1,10 +1,11 @@
-app.controller('graphsCtrl',function($scope,$http){
+app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 
 	// $http.get('js/data.json').success(function(data){
 
 	// $scope.symptoms = data;
 
 	// });
+
 
 
 	window.scope = $scope;
@@ -143,34 +144,62 @@ app.controller('graphsCtrl',function($scope,$http){
 		};
 
 
+		$scope.randomPopulation();
 
 		// angular.element(document.querySelectorAll('.population')).addClass('hello');
-
-		$('.population g.no-therapy-man').attr('class','no-therapy-man');
-		$('.population g.aspirin-man').attr('class','aspirin-man');
-		$('.population g.vka-man').attr('class','vka-man');
-		$('.population g.noak-man').attr('class','-noak-man');
-
-		_.sample($('.population g.no-therapy-man'),$scope.populationClass.noTherapy).attr('class','no-therapy-man active');
-
-		_.sample($('.population g.aspirin-man'),$scope.populationClass.aspirin).attr('class','aspirin-man active');
-
-		_.sample($('.population g.vka-man'),$scope.populationClass.vka).attr('class','vka-man active');
-
-		_.sample($('.population g.noak-man'),$scope.populationClass.noak).attr('class','noak-man active');
-
+		
 
 	});
 
 
-	
+	$scope.randomPopulation = function(){
 
-	
+
+		$('.population .no-therapy-man').attr('class','no-therapy-man');
+		$('.population .aspirin-man').attr('class','aspirin-man');
+		$('.population .vka-man').attr('class','vka-man');
+		$('.population .noak-man').attr('class','noak-man');
+
+		var randomTherapy = _.sample($('.population .no-therapy-man'),$scope.populationClass.noTherapy);
+
+		for (var i = 0; i < randomTherapy.length; i++) {
+			randomTherapy[i].setAttribute('class','no-therapy-man active');
+		}
+
+		var randomAspirin = _.sample($('.population .aspirin-man'),$scope.populationClass.aspirin);
+
+		for (var i = 0; i < randomAspirin.length; i++) {
+			randomAspirin[i].setAttribute('class','aspirin-man active');
+		}
+
+		var randomVka = _.sample($('.population .vka-man'),$scope.populationClass.vka);
+
+		for (var i = 0; i < randomVka.length; i++) {
+			randomVka[i].setAttribute('class','vka-man active');
+		}
+
+		var randomNoak = _.sample($('.population .noak-man'),$scope.populationClass.noak);
+
+		for (var i = 0; i < randomNoak.length; i++) {
+			randomNoak[i].setAttribute('class','noak-man active');
+		}
+
+
+	}
 
 
 	$scope.number = 100;
 	$scope.getNumber = function(num) {
-	    return new Array(num);
+		return new Array(num);
 	};
+
+	$rootScope.$on('$stateChangeStart',
+	function(event, toState, toParams, fromState, fromParams){
+
+		if (toState.name === 'graphs.population') {
+			$timeout($scope.randomPopulation,500);
+		}
+
+	});
 
 });
