@@ -65,8 +65,8 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 	// watch conditions for changes
 	$scope.$watch('conditions|filter:{selected:true}', function (nv) {
 
-		if($scope.conditions[1].selected){
-			$scope.conditions[0].selected = false;
+		if($scope.conditions[3].selected){
+			$scope.conditions[2].selected = false;
 		}
 
 		$scope.selection = nv.map(function (condition) {
