@@ -1,11 +1,168 @@
 @blue: #00214D;
 @risk-red: #FF0000;
 
+#dillon{
+	background: url('../img/checkboxes/icons_01-01.svg');
+	height: 20px;
+	width: 200px;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+
+label {    
+    height:25px;
+    width: 50px;
+    padding-left: 18px;
+}
+
+
+label.betw{
+	background: url('../img/checkboxes/icons_02-03.svg') no-repeat;
+}
+
+label.betw.selected{
+	background: url('../img/checkboxes/icons_01-03.svg') no-repeat;
+}
+
+label.upto{
+	background: url('../img/checkboxes/icons_02-03.svg') no-repeat;
+}
+
+label.upto.selected{
+	background: url('../img/checkboxes/icons_01-03.svg') no-repeat;
+}
+
+
+label.congestive{
+	background: url('../img/checkboxes/icons_02-01.svg') no-repeat;
+}
+
+label.congestive.selected{
+	background: url('../img/checkboxes/icons_01-01.svg') no-repeat;
+}
+
+label.hypertension{
+	background: url('../img/checkboxes/icons_02-02.svg') no-repeat;
+}
+
+label.hypertension.selected{
+	background: url('../img/checkboxes/icons_01-02.svg') no-repeat;
+}
+
+label.diabetes{
+	background: url('../img/checkboxes/icons_02-04.svg') no-repeat;
+}
+
+label.diabetes.selected{
+	background: url('../img/checkboxes/icons_01-04.svg') no-repeat;
+}
+
+label.prior-stroke{
+	background: url('../img/checkboxes/icons_02-05.svg') no-repeat;
+}
+
+label.prior-stroke.selected{
+	background: url('../img/checkboxes/icons_01-05.svg') no-repeat;
+}
+
+label.vasculor{
+	background: url('../img/checkboxes/icons_02-06.svg') no-repeat;
+}
+
+label.vasculor.selected{
+	background: url('../img/checkboxes/icons_01-06.svg') no-repeat;
+}
+
+label.female{
+	background: url('../img/checkboxes/icons_02-07.svg') no-repeat;
+}
+
+label.female.selected{
+	background: url('../img/checkboxes/icons_01-07.svg') no-repeat;
+}
+
+label.abnormal-renal{
+	background: url('../img/checkboxes/icons_02-08.svg') no-repeat;
+}
+
+label.abnormal-renal.selected{
+	background: url('../img/checkboxes/icons_01-08.svg') no-repeat;
+}
+
+label.abnormal-liver{
+	background: url('../img/checkboxes/icons_02-09.svg') no-repeat;
+}
+
+label.abnormal-liver.selected{
+	background: url('../img/checkboxes/icons_01-09.svg') no-repeat;
+}
+
+label.prior-major{
+	background: url('../img/checkboxes/icons_02-10.svg') no-repeat;
+}
+
+label.prior-major.selected{
+	background: url('../img/checkboxes/icons_01-10.svg') no-repeat;
+}
+
+
+label.hx{
+	background: url('../img/checkboxes/icons_02-11.svg') no-repeat;
+}
+
+label.hx.selected{
+	background: url('../img/checkboxes/icons_01-11.svg') no-repeat;
+}
+
+label.current{
+	background: url('../img/checkboxes/icons_02-12.svg') no-repeat;
+}
+
+label.current.selected{
+	background: url('../img/checkboxes/icons_01-12.svg') no-repeat;
+}
+
+label.taking{
+	background: url('../img/checkboxes/icons_02-13.svg') no-repeat;
+}
+
+label.taking.selected{
+	background: url('../img/checkboxes/icons_01-13.svg') no-repeat;
+}
+
+
+.checkbox {
+	span{
+		position: relative;
+		bottom: 8px;
+	}
+}
+
+
+
+
+
 button:focus {outline:0 !important;}
 
 h4{
 	text-align: center;
 }
+
+.banner{
+	background: #ccc;
+	margin-bottom: 35px;
+
+	.page-header{
+		border:none;
+		color: #fff;
+		margin: 30px 0 20px;
+	}
+}
+
+
 
 .btn-risk{
 	-webkit-transition: all 0.2s;
@@ -13,6 +170,8 @@ h4{
 	color: @risk-red;
 	border: @risk-red solid 1px;
 	outline: 0;
+	width: 48%;
+	font-weight: bold;
 }
 
 .btn-risk.active{
@@ -32,7 +191,7 @@ h4{
 .graphs{
 
 	.bar{
-		height: 200px;
+		height: 265px;
 		background-color: #DADCDD;
 		position: relative;
 
@@ -53,7 +212,7 @@ h4{
 		width: 100%;
 
 		.circle-container{
-			height: 150px;
+			height: 245px;
 			display: table-cell;
 			vertical-align: middle;
 
@@ -62,7 +221,7 @@ h4{
 				width: 120px;
 				margin: 0 auto;
 				border-radius: 50%;
-				background-color: #DADCDD;
+				background-color: @risk-red;
 				position: relative;
 				transition : all 0.5s;
 				-webkit-transition : all 0.5s;
@@ -76,10 +235,12 @@ h4{
 			width: 10%;
 			-webkit-transition: 0.5s fill;
 			transition: 0.5s fill;
+			height: 20px;
+			fill:#dadcdd;
 		}
 
 		svg.active{
-			fill: @risk-red;
+			fill:@risk-red;
 		}
 
 	}
@@ -127,21 +288,37 @@ h4{
 
 /* Small devices (tablets, 768px and up) */
 @media(min-width:768px){
+	.selections{
+		background: url('../img/divider.png') no-repeat;
+		background-position: right 10px top;
+
+	}
+
 	h4{
-		font-size:12px;
+		margin-bottom: 30px;
 	}
 
 	.risk{
 		button{
-			margin-bottom:50px;
+			margin-bottom:30px;
 		}
+	}
+
+	.btn-risk{
+		width: 100%;
+		margin-bottom: 40px;
 	}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media(min-width:992px){
 	.selections{
-		height: 500px;
+		height: 578px;
+	}
+
+	.btn-risk{
+		width: 48%;
+		margin-bottom: 0px;
 	}
 }
 

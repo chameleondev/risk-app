@@ -35,20 +35,20 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 
 	//Conditions
 	$scope.conditions = [
-		{name : 'Age 65-74', selected : false, cha : 1, bleed : 1},
-		{name : 'Age > 75', selected : false, cha : 2, bleed : 1},
-		{name : 'Congestive Heart Failure', selected : false, cha : 1, bleed : 0},
-		{name : 'Hypertension', selected : false, cha : 1, bleed : 1},
-		{name : 'Diabetes', selected : false, cha : 1, bleed : 0},
-		{name : 'Prior Stroke/TIA/Thromboembolism', selected : false, cha : 2, bleed : 1},
-		{name : 'Vasculor Disease', selected : false, cha : 1, bleed : 0},
-		{name : 'Female', selected : false, cha : 1, bleed : 0},
-		{name : 'Abmormal renal function', selected : false, cha : 0, bleed : 1},
-		{name : 'Abnormal liver function', selected : false, cha : 0, bleed : 1},
-		{name : 'Prior major bleeding', selected : false, cha : 0, bleed : 1},
-		{name : 'Hx of labile INR', selected : false, cha : 0, bleed : 1},
-		{name : 'Current Excess of alcohol', selected : false, cha : 0, bleed : 1},
-		{name : 'Taking antiplatelets or NSAIDs', selected : false, cha : 0, bleed : 1}
+		{name : 'Congestive Heart Failure', selected : false, cha : 1, bleed : 0,cla:'congestive'},
+		{name : 'Hypertension', selected : false, cha : 1, bleed : 1,cla:'hypertension'},
+		{name : 'Age 65-74', selected : false, cha : 1, bleed : 1,cla:'betw'},
+		{name : 'Age > 75', selected : false, cha : 2, bleed : 1,cla:'upto'},
+		{name : 'Diabetes', selected : false, cha : 1, bleed : 0,cla:'diabetes'},
+		{name : 'Prior Stroke/TIA/Thromboembolism', selected : false, cha : 2, bleed : 1,cla:'prior-stroke'},
+		{name : 'Vasculor Disease', selected : false, cha : 1, bleed : 0,cla:'vasculor'},
+		{name : 'Female', selected : false, cha : 1, bleed : 0,cla:'female'},
+		{name : 'Abmormal renal function', selected : false, cha : 0, bleed : 1,cla:'abnormal-renal'},
+		{name : 'Abnormal liver function', selected : false, cha : 0, bleed : 1,cla:'abnormal-liver'},
+		{name : 'Prior major bleeding', selected : false, cha : 0, bleed : 1,cla:'prior-major'},
+		{name : 'Hx of labile INR', selected : false, cha : 0, bleed : 1,cla:'hx'},
+		{name : 'Current Excess of alcohol', selected : false, cha : 0, bleed : 1,cla:'current'},
+		{name : 'Taking antiplatelets or NSAIDs', selected : false, cha : 0, bleed : 1,cla:'taking'}
 	];
 
 	//Selected Conditions

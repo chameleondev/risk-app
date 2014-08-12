@@ -3,7 +3,15 @@
 	<div class="col-md-2 col-xs-3">
 		<h4>No Therapy</h4>
 		<div class="population">
-			<svg ng-repeat="i in getNumber(number) track by $index" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="no-therapy-man"><path d="M256,106.6c20.6,0.1,37.3-16.6,37.3-37.3c0-20.6-16.7-37.3-37.3-37.3c-20.6,0-37.3,16.7-37.3,37.3  C218.7,89.9,235.4,106.6,256,106.6z"/><g><path d="M293.4,115H256h-37.4c-28.2,0-46.6,24.8-46.6,48.4V277c0,22,31,22,31,0V172h6v285.6c0,30.4,42,29.4,43,0V293h7h1v164.7   c1.7,31.2,43,28.2,43-0.1V172h5v105c0,22,32,22,32,0V163.4C340,139.9,321.5,115,293.4,115z"/></g></svg>
+			<svg ng-repeat="i in getNumber(number) track by $index" class="no-therapy-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
 		</div>
 		<p class="bar-percent percentage">{{probabilityStroke.noTherapy | number:1}}%</p>
 	</div>
@@ -12,7 +20,15 @@
 		<h4>Aspirin</h4>
 		<div class="population">
 
-			<svg ng-repeat="i in getNumber(number) track by $index" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="aspirin-man"><path d="M256,106.6c20.6,0.1,37.3-16.6,37.3-37.3c0-20.6-16.7-37.3-37.3-37.3c-20.6,0-37.3,16.7-37.3,37.3  C218.7,89.9,235.4,106.6,256,106.6z"/><g><path d="M293.4,115H256h-37.4c-28.2,0-46.6,24.8-46.6,48.4V277c0,22,31,22,31,0V172h6v285.6c0,30.4,42,29.4,43,0V293h7h1v164.7   c1.7,31.2,43,28.2,43-0.1V172h5v105c0,22,32,22,32,0V163.4C340,139.9,321.5,115,293.4,115z"/></g></svg>
+			<svg ng-repeat="i in getNumber(number) track by $index" class="aspirin-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
 
 		</div>
 		<p class="bar-percent percentage">{{probabilityStroke.aspirin | number:1}}%</p>
@@ -21,7 +37,15 @@
 	<div class="col-md-2 col-xs-3">
 		<h4>VKA</h4>
 		<div class="population">
-			<svg ng-repeat="i in getNumber(number) track by $index" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="vka-man"><path d="M256,106.6c20.6,0.1,37.3-16.6,37.3-37.3c0-20.6-16.7-37.3-37.3-37.3c-20.6,0-37.3,16.7-37.3,37.3  C218.7,89.9,235.4,106.6,256,106.6z"/><g><path d="M293.4,115H256h-37.4c-28.2,0-46.6,24.8-46.6,48.4V277c0,22,31,22,31,0V172h6v285.6c0,30.4,42,29.4,43,0V293h7h1v164.7   c1.7,31.2,43,28.2,43-0.1V172h5v105c0,22,32,22,32,0V163.4C340,139.9,321.5,115,293.4,115z"/></g></svg>
+			<svg ng-repeat="i in getNumber(number) track by $index" class="vka-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
 		</div>
 		<p class="bar-percent percentage">{{probabilityStroke.vka | number:1}}%</p>
 	</div>
@@ -29,7 +53,15 @@
 	<div class="col-md-2 col-xs-3">
 		<h4>NOAK</h4>
 		<div class="population">
-			<svg ng-repeat="i in getNumber(number) track by $index" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="noak-man"><path d="M256,106.6c20.6,0.1,37.3-16.6,37.3-37.3c0-20.6-16.7-37.3-37.3-37.3c-20.6,0-37.3,16.7-37.3,37.3  C218.7,89.9,235.4,106.6,256,106.6z"/><g><path d="M293.4,115H256h-37.4c-28.2,0-46.6,24.8-46.6,48.4V277c0,22,31,22,31,0V172h6v285.6c0,30.4,42,29.4,43,0V293h7h1v164.7   c1.7,31.2,43,28.2,43-0.1V172h5v105c0,22,32,22,32,0V163.4C340,139.9,321.5,115,293.4,115z"/></g></svg>
+			<svg ng-repeat="i in getNumber(number) track by $index" class="noak-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
 		</div>
 		<p class="bar-percent percentage">{{probabilityStroke.noak | number:1}}%</p>
 	</div>
