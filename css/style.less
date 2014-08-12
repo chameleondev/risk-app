@@ -68,11 +68,11 @@ label.prior-stroke.selected{
 	background: url('../img/checkboxes/icons_01-05.svg') no-repeat;
 }
 
-label.vasculor{
+label.vascular{
 	background: url('../img/checkboxes/icons_02-06.svg') no-repeat;
 }
 
-label.vasculor.selected{
+label.vascular.selected{
 	background: url('../img/checkboxes/icons_01-06.svg') no-repeat;
 }
 
@@ -138,6 +138,7 @@ label.taking.selected{
 	span{
 		position: relative;
 		bottom: 8px;
+		left: 10px;
 	}
 }
 
@@ -282,16 +283,16 @@ h4{
 	.risk{
 		button{
 			margin:0 auto 20px;
+
 		}
 	}
+
 }
 
 /* Small devices (tablets, 768px and up) */
 @media(min-width:768px){
 	.selections{
-		background: url('../img/divider.png') no-repeat;
-		background-position: right 10px top;
-
+		background: none;
 	}
 
 	h4{
@@ -307,6 +308,7 @@ h4{
 	.btn-risk{
 		width: 100%;
 		margin-bottom: 40px;
+		font-size: 18px;
 	}
 }
 
@@ -323,4 +325,9 @@ h4{
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media(min-width:1200px){}
+@media(min-width:1200px){
+	.selections{
+		background: url('../img/divider.png') no-repeat;
+		background-position: right 45px top;
+	}
+}

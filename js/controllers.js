@@ -41,7 +41,7 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 		{name : 'Age > 75', selected : false, cha : 2, bleed : 1,cla:'upto'},
 		{name : 'Diabetes', selected : false, cha : 1, bleed : 0,cla:'diabetes'},
 		{name : 'Prior Stroke/TIA/Thromboembolism', selected : false, cha : 2, bleed : 1,cla:'prior-stroke'},
-		{name : 'Vasculor Disease', selected : false, cha : 1, bleed : 0,cla:'vasculor'},
+		{name : 'Vascular Disease', selected : false, cha : 1, bleed : 0,cla:'vascular'},
 		{name : 'Female', selected : false, cha : 1, bleed : 0,cla:'female'},
 		{name : 'Abmormal renal function', selected : false, cha : 0, bleed : 1,cla:'abnormal-renal'},
 		{name : 'Abnormal liver function', selected : false, cha : 0, bleed : 1,cla:'abnormal-liver'},
