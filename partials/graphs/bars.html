@@ -1,5 +1,8 @@
 
-
+	
+	<div class="col-md-8">
+		<h3>Risk of Ischaemic Stroke, ICH and SEE per 5 Years %</h3>
+	</div>
 	<div class="col-md-2 col-xs-3">
 		<h4>No Therapy</h4>
 		<div class="bar">
@@ -25,10 +28,50 @@
 	</div>
 
 	<div class="col-md-2 col-xs-3">
-		<h4>NOAK</h4>
+		<h4>NOAC</h4>
 		<div class="bar">
 			<div class="bar-val" style="height: {{probabilityStroke.noak | number:1}}%"></div>
 		</div>
 		<p class="bar-percent percentage">{{probabilityStroke.noak | number:1}}%</p>
+	</div>
+
+
+
+
+
+
+	<div class="col-md-8">
+		<h3>Risk Of Major Bleeds per 5 Years %</h3>
+	</div>
+	<div class="col-md-2 col-xs-3">
+		<h4>No Therapy</h4>
+		<div class="bar">
+			<div class="bar-val" style="height: {{probabilityBleed.noTherapy | number:1}}%"></div>
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.noTherapy | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>Aspirin</h4>
+		<div class="bar">
+			<div class="bar-val" style="height: {{probabilityBleed.aspirin | number:1}}%"></div>
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.aspirin | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>VKA</h4>
+		<div class="bar">
+			<div class="bar-val" style="height: {{probabilityBleed.vka | number:1}}%"></div>
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.vka | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>NOAC</h4>
+		<div class="bar">
+			<div class="bar-val" style="height: {{probabilityBleed.noak | number:1}}%"></div>
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.noak | number:1}}%</p>
 	</div>
 	

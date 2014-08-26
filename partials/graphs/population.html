@@ -1,5 +1,8 @@
 
-
+<div class="stroke-population">
+	<div class="col-md-8">
+		<h3>Risk of Ischaemic Stroke, ICH and SEE per 5 Years %</h3>
+	</div>
 	<div class="col-md-2 col-xs-3">
 		<h4>No Therapy</h4>
 		<div class="population">
@@ -51,7 +54,7 @@
 	</div>
 
 	<div class="col-md-2 col-xs-3">
-		<h4>NOAK</h4>
+		<h4>NOAC</h4>
 		<div class="population">
 			<svg ng-repeat="i in getNumber(number) track by $index" class="noak-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
@@ -65,4 +68,79 @@
 		</div>
 		<p class="bar-percent percentage">{{probabilityStroke.noak | number:1}}%</p>
 	</div>
-	
+</div>
+
+
+
+
+
+<div class="bleed-population">
+	<div class="col-md-8">
+		<h3>Risk Of Major Bleeds per 5 Years %</h3>
+	</div>
+	<div class="col-md-2 col-xs-3">
+		<h4>No Therapy</h4>
+		<div class="population">
+			<svg ng-repeat="i in getNumber(number) track by $index" class="no-therapy-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.noTherapy | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>Aspirin</h4>
+		<div class="population">
+
+			<svg ng-repeat="i in getNumber(number) track by $index" class="aspirin-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
+
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.aspirin | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>VKA</h4>
+		<div class="population">
+			<svg ng-repeat="i in getNumber(number) track by $index" class="vka-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.vka | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>NOAC</h4>
+		<div class="population">
+			<svg ng-repeat="i in getNumber(number) track by $index" class="noak-man" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="11.5px" height="18.5px" viewBox="0 0 11.5 18.5" style="enable-background:new 0 0 11.5 18.5;" xml:space="preserve">
+			<path  d="M5.7,0.4c-1,0-1.8,0.8-1.8,1.8S4.7,4,5.7,4c1,0,1.8-0.8,1.8-1.8
+				S6.7,0.4,5.7,0.4L5.7,0.4z M5.7,13.7l0.6,3.2c0.1,0.3,0.2,0.7,0.4,0.9c0.3,0.3,0.7,0.4,0.9,0.4c0.3,0,0.6-0.3,0.6-0.6L8,13.7
+				L7.6,8.3l0-0.1L9,10c0.3,0.4,0.6,0.8,1.2,0.8c0.3,0,0.6-0.2,0.6-0.6c0-0.1,0-0.2-0.1-0.3L8.4,5.5C8.2,5.1,8,4.9,7.7,4.7
+				C7.4,4.6,7.1,4.5,6.8,4.5H5.7H4.5c-0.3,0-0.6,0.1-0.8,0.2C3.4,4.9,3.1,5.1,2.9,5.5L0.7,10c0,0.1-0.1,0.2-0.1,0.3
+				c0,0.3,0.3,0.6,0.6,0.6c0.6,0,0.9-0.4,1.2-0.8l1.3-1.8l0,0.1l-0.4,5.4l-0.3,3.8c0,0.3,0.3,0.6,0.6,0.6c0.3,0,0.6-0.1,0.9-0.4
+				c0.2-0.2,0.4-0.6,0.4-0.9L5.7,13.7z"/>
+			</svg>
+		</div>
+		<p class="bar-percent percentage">{{probabilityBleed.noak | number:1}}%</p>
+	</div>
+</div>

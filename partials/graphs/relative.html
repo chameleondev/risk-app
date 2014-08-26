@@ -1,5 +1,7 @@
 
-
+	<div class="col-md-8">
+		<h3>Risk of Ischaemic Stroke, ICH and SEE per 5 Years %</h3>
+	</div>
 	<div class="col-md-2 col-xs-3">
 		<h4>No Therapy</h4>
 
@@ -17,7 +19,7 @@
 
 		<div class="center-circle">
 			<div class="circle-container">
-				<div class="circle" style="height:{{aspirinRadius}}px;width:{{aspirinRadius}}px"></div>
+				<div class="circle" style="height:{{radius.stroke.aspirin}}px;width:{{radius.stroke.aspirin}}px"></div>
 			</div>
 		</div>
 
@@ -29,7 +31,7 @@
 
 		<div class="center-circle">
 			<div class="circle-container">
-				<div class="circle" style="height:{{vkaRadius}}px;width:{{vkaRadius}}px"></div>
+				<div class="circle" style="height:{{radius.stroke.vka}}px;width:{{radius.stroke.vka}}px"></div>
 			</div>
 		</div>
 
@@ -37,14 +39,69 @@
 	</div>
 
 	<div class="col-md-2 col-xs-3">
-		<h4>NOAK</h4>
+		<h4>NOAC</h4>
 		
 		<div class="center-circle">
 			<div class="circle-container">
-				<div class="circle" style="height:{{noakRadius}}px;width:{{noakRadius}}px"></div>
+				<div class="circle" style="height:{{radius.stroke.noak}}px;width:{{radius.stroke.noak}}px"></div>
 			</div>
 		</div>
 
 		<p class="bar-percent percentage">{{probabilityStroke.noak | number:1}}%</p>
 	</div>
 	
+
+
+
+
+
+	<div class="col-md-8">
+		<h3>Risk Of Major Bleeds per 5 Years %</h3>
+	</div>
+	<div class="col-md-2 col-xs-3" id="bleed-circles">
+		<h4>No Therapy</h4>
+
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle"></div>
+			</div>
+		</div>
+			
+		<p class="bar-percent percentage">{{probabilityBleed.noTherapy | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>Aspirin</h4>
+
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle" style="height:{{radius.bleed.aspirin}}px;width:{{radius.bleed.aspirin}}px"></div>
+			</div>
+		</div>
+
+		<p class="bar-percent percentage">{{probabilityBleed.aspirin | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>VKA</h4>
+
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle" style="height:{{radius.bleed.vka}}px;width:{{radius.bleed.vka}}px"></div>
+			</div>
+		</div>
+
+		<p class="bar-percent percentage">{{probabilityBleed.vka | number:1}}%</p>
+	</div>
+
+	<div class="col-md-2 col-xs-3">
+		<h4>NOAC</h4>
+		
+		<div class="center-circle">
+			<div class="circle-container">
+				<div class="circle" style="height:{{radius.bleed.noak}}px;width:{{radius.bleed.noak}}px"></div>
+			</div>
+		</div>
+
+		<p class="bar-percent percentage">{{probabilityBleed.noak | number:1}}%</p>
+	</div>

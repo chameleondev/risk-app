@@ -8,6 +8,10 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 
 
 
+
+
+
+
 	window.scope = $scope;
 
 	var multiplier = {
@@ -30,6 +34,16 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 			noak : 0.86
 		}
 	};
+
+
+
+	
+
+
+
+	// $(".selections-toggle").click(function(){
+	// 	alert("hello");
+	// },false);
 
 	
 
@@ -54,6 +68,7 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 	//Selected Conditions
 
 	$scope.selection = [];
+
 
 
 	// helper method to get selected conditions
@@ -88,6 +103,9 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 	var arrICHRate = [0.1,0.2,0.6,0.7,1.2,1.6];
 	var arrMajorBleedRate = [0.37,0.6,1.15,1.73,2.7,3.233];
 
+
+
+
 	$scope.$watch('selection',function(){
 		// $scope.strokeRiskScore = $scope.selection.length;
 		// $scope.bleedRiskScore = $scope.selection.length < 6 ? $scope.selection.length : 5;
@@ -99,7 +117,7 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 		// var bleedBase = arrMajorBleedRate[$scope.bleed] * 5;
 		var bleedBase =  $scope.bleed < 6 ? arrMajorBleedRate[$scope.bleed] * 5 : arrMajorBleedRate[4] * 5 ;
 
-		console.log(bleedBase+" "+ichBase);
+		// console.log(bleedBase+" "+ichBase);
 		
 
 		$scope.probabilityStroke = {
@@ -110,79 +128,284 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 		};
 
 		$scope.probabilityBleed = {
-			noTherapy : 0,
-			aspirin : 0,
-			vka : 0,
-			noak : 0
+			noTherapy : bleedBase * 0.5,
+			aspirin : bleedBase * 1.1,
+			vka : bleedBase,
+			noak : bleedBase * 0.86
 		};
 
-		// console.log("strokebase: "+ strokeBase);
-		// console.log("bleedbase: "+ bleedBase);
-		// console.log("ichbase: "+ ichBase);
-
-		// console.log(multiplier.ich.noTherapy);
 
 
-		$scope.aspirinRadius = (120 * $scope.probabilityStroke.aspirin) / $scope.probabilityStroke.noTherapy;
+		$scope.radius = {
+			stroke : {
+				aspirin : (120 * $scope.probabilityStroke.aspirin) / $scope.probabilityStroke.noTherapy,
+				vka : (120 * $scope.probabilityStroke.vka) / $scope.probabilityStroke.noTherapy,
+				noak : (120 * $scope.probabilityStroke.noak) / $scope.probabilityStroke.noTherapy
+			},
+			bleed : {
+				aspirin : (40 * $scope.probabilityBleed.aspirin) / $scope.probabilityBleed.noTherapy,
+				vka : (40 * $scope.probabilityBleed.vka) / $scope.probabilityBleed.noTherapy,
+				noak : (40 * $scope.probabilityBleed.noak) / $scope.probabilityBleed.noTherapy
+			}
+		};
 
-		$scope.vkaRadius = (120 * $scope.probabilityStroke.vka) / $scope.probabilityStroke.noTherapy;
 
-		$scope.noakRadius = (120 * $scope.probabilityStroke.noak) / $scope.probabilityStroke.noTherapy;
 
-		console.log(Math.round($scope.probabilityStroke.noTherapy));
 
-		_.each($scope.probabilityStroke, function(obj){
-			console.log(Math.round(obj));
-		});
 
 
 		$scope.populationClass = {
-			noTherapy : Math.round($scope.probabilityStroke.noTherapy),
-			aspirin : Math.round($scope.probabilityStroke.aspirin),
-			vka : Math.round($scope.probabilityStroke.vka),
-			noak : Math.round($scope.probabilityStroke.noak)
+			stroke : {
+				noTherapy : Math.round($scope.probabilityStroke.noTherapy),
+				aspirin : Math.round($scope.probabilityStroke.aspirin),
+				vka : Math.round($scope.probabilityStroke.vka),
+				noak : Math.round($scope.probabilityStroke.noak)
+			},
+			bleed : {
+				noTherapy : Math.round($scope.probabilityBleed.noTherapy),
+				aspirin : Math.round($scope.probabilityBleed.aspirin),
+				vka : Math.round($scope.probabilityBleed.vka),
+				noak : Math.round($scope.probabilityBleed.noak)
+			}		
 		};
+
+	
+
 
 
 		$scope.randomPopulation();
 
-		// angular.element(document.querySelectorAll('.population')).addClass('hello');
+
 		
+
+		// console.log(bleedBase * 0.5);
+		// console.log(bleedBase * 1.1);
+		// console.log(bleedBase);
+		// console.log(bleedBase * 0.86);
 
 	});
 
+	
+
 
 	$scope.randomPopulation = function(){
+		
+
+		(function(){
+			
+
+			var active = $('.stroke-population .population .no-therapy-man.active').length;
+			var notActive = $('.stroke-population .population .no-therapy-man:not(.active)').length;
+
+			var difference = $scope.populationClass.stroke.noTherapy - active;
 
 
-		$('.population .no-therapy-man').attr('class','no-therapy-man');
-		$('.population .aspirin-man').attr('class','aspirin-man');
-		$('.population .vka-man').attr('class','vka-man');
-		$('.population .noak-man').attr('class','noak-man');
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomTherapy = _.sample($('.stroke-population .population .no-therapy-man:not(.active)'),difference);
 
-		var randomTherapy = _.sample($('.population .no-therapy-man'),$scope.populationClass.noTherapy);
+				for (var i = 0; i < randomTherapy.length; i++) {
+					randomTherapy[i].setAttribute('class','no-therapy-man active');
+				}
+			}else if(difference < 0){
+				var randomTherapy = _.sample($('.stroke-population .population .no-therapy-man.active'),Math.abs(difference));
 
-		for (var i = 0; i < randomTherapy.length; i++) {
-			randomTherapy[i].setAttribute('class','no-therapy-man active');
-		}
+				for (var i = 0; i < randomTherapy.length; i++) {
+					randomTherapy[i].setAttribute('class','no-therapy-man');
+				}
+			}
 
-		var randomAspirin = _.sample($('.population .aspirin-man'),$scope.populationClass.aspirin);
+		})();
 
-		for (var i = 0; i < randomAspirin.length; i++) {
-			randomAspirin[i].setAttribute('class','aspirin-man active');
-		}
 
-		var randomVka = _.sample($('.population .vka-man'),$scope.populationClass.vka);
+		(function(){
+			
 
-		for (var i = 0; i < randomVka.length; i++) {
-			randomVka[i].setAttribute('class','vka-man active');
-		}
+			var active = $('.stroke-population .population .aspirin-man.active').length;
+			var notActive = $('.stroke-population .population .aspirin-man:not(.active)').length;
 
-		var randomNoak = _.sample($('.population .noak-man'),$scope.populationClass.noak);
+			window.difference = $scope.populationClass.stroke.aspirin - active;
 
-		for (var i = 0; i < randomNoak.length; i++) {
-			randomNoak[i].setAttribute('class','noak-man active');
-		}
+
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomAspirin = _.sample($('.stroke-population .population .aspirin-man:not(.active)'),difference);
+
+				for (var i = 0; i < randomAspirin.length; i++) {
+					randomAspirin[i].setAttribute('class','aspirin-man active');
+				}
+			}else if(difference < 0){
+				var randomAspirin = _.sample($('.stroke-population .population .aspirin-man.active'),Math.abs(difference));
+
+				for (var i = 0; i < randomAspirin.length; i++) {
+					randomAspirin[i].setAttribute('class','aspirin-man');
+				}
+			}
+
+		})();
+
+
+		(function(){
+			
+
+			var active = $('.stroke-population .population .vka-man.active').length;
+			var notActive = $('.stroke-population .population .vka-man:not(.active)').length;
+
+			var difference = $scope.populationClass.stroke.vka - active;
+
+
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomVka = _.sample($('.stroke-population .population .vka-man:not(.active)'),difference);
+
+				for (var i = 0; i < randomVka.length; i++) {
+					randomVka[i].setAttribute('class','vka-man active');
+				}
+			}else if(difference < 0){
+				var randomVka = _.sample($('.stroke-population .population .vka-man.active'),Math.abs(difference));
+
+				for (var i = 0; i < randomVka.length; i++) {
+					randomVka[i].setAttribute('class','vka-man');
+				}
+			}
+
+		})();
+
+
+		(function(){
+			
+
+			var active = $('.stroke-population .population .noak-man.active').length;
+			var notActive = $('.stroke-population .population .noak-man:not(.active)').length;
+
+			var difference = $scope.populationClass.stroke.noak - active;
+
+
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomNoak = _.sample($('.stroke-population .population .noak-man:not(.active)'),difference);
+
+				for (var i = 0; i < randomNoak.length; i++) {
+					randomNoak[i].setAttribute('class','noak-man active');
+				}
+			}else if(difference < 0){
+				var randomNoak = _.sample($('.stroke-population .population .noak-man.active'),Math.abs(difference));
+
+				for (var i = 0; i < randomNoak.length; i++) {
+					randomNoak[i].setAttribute('class','noak-man');
+				}
+			}
+
+		})();
+
+
+
+		(function(){
+			
+
+			var active = $('.bleed-population .population .no-therapy-man.active').length;
+			var notActive = $('.bleed-population .population .no-therapy-man:not(.active)').length;
+
+			var difference = $scope.populationClass.bleed.noTherapy - active;
+
+
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomTherapy = _.sample($('.bleed-population .population .no-therapy-man:not(.active)'),difference);
+
+				for (var i = 0; i < randomTherapy.length; i++) {
+					randomTherapy[i].setAttribute('class','no-therapy-man active');
+				}
+			}else if(difference < 0){
+				var randomTherapy = _.sample($('.bleed-population .population .no-therapy-man.active'),Math.abs(difference));
+
+				for (var i = 0; i < randomTherapy.length; i++) {
+					randomTherapy[i].setAttribute('class','no-therapy-man');
+				}
+			}
+
+		})();
+
+
+		(function(){
+			
+
+			var active = $('.bleed-population .population .aspirin-man.active').length;
+			var notActive = $('.bleed-population .population .aspirin-man:not(.active)').length;
+
+			window.difference = $scope.populationClass.bleed.aspirin - active;
+
+
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomAspirin = _.sample($('.bleed-population .population .aspirin-man:not(.active)'),difference);
+
+				for (var i = 0; i < randomAspirin.length; i++) {
+					randomAspirin[i].setAttribute('class','aspirin-man active');
+				}
+			}else if(difference < 0){
+				var randomAspirin = _.sample($('.bleed-population .population .aspirin-man.active'),Math.abs(difference));
+
+				for (var i = 0; i < randomAspirin.length; i++) {
+					randomAspirin[i].setAttribute('class','aspirin-man');
+				}
+			}
+
+		})();
+
+
+		(function(){
+			
+
+			var active = $('.bleed-population .population .vka-man.active').length;
+			var notActive = $('.bleed-population .population .vka-man:not(.active)').length;
+
+			var difference = $scope.populationClass.bleed.vka - active;
+
+
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomVka = _.sample($('.bleed-population .population .vka-man:not(.active)'),difference);
+
+				for (var i = 0; i < randomVka.length; i++) {
+					randomVka[i].setAttribute('class','vka-man active');
+				}
+			}else if(difference < 0){
+				var randomVka = _.sample($('.bleed-population .population .vka-man.active'),Math.abs(difference));
+
+				for (var i = 0; i < randomVka.length; i++) {
+					randomVka[i].setAttribute('class','vka-man');
+				}
+			}
+
+		})();
+
+
+		(function(){
+			
+
+			var active = $('.bleed-population .population .noak-man.active').length;
+			var notActive = $('.bleed-population .population .noak-man:not(.active)').length;
+
+			var difference = $scope.populationClass.bleed.noak - active;
+
+
+			//if number is positive loop through the non-active else if negative loop through the active
+			if (difference > 0) {
+				var randomNoak = _.sample($('.bleed-population .population .noak-man:not(.active)'),difference);
+
+				for (var i = 0; i < randomNoak.length; i++) {
+					randomNoak[i].setAttribute('class','noak-man active');
+				}
+			}else if(difference < 0){
+				var randomNoak = _.sample($('.bleed-population .population .noak-man.active'),Math.abs(difference));
+
+				for (var i = 0; i < randomNoak.length; i++) {
+					randomNoak[i].setAttribute('class','noak-man');
+				}
+			}
+
+		})();
 
 
 	}
@@ -201,5 +424,7 @@ app.controller('graphsCtrl',function($scope,$http,$rootScope,$timeout){
 		}
 
 	});
+
+
 
 });

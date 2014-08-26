@@ -6,14 +6,23 @@
 
 
 		<img src="img/checkboxes/icons_01-01.svg" alt=""> -->
+		
+		<h3>Conditions</h3>
 
 		<div class="checkbox" ng-repeat="condition in conditions">
-		  <label ng-class="{'selected':condition.selected}" class="{{condition.cla}}">
+		  <label ng-class="{'selected':condition.selected}" class="{{condition.cla}} selections-toggle">
 		    <input type="checkbox" name="selectedConditions[]" value="{{condition.name}}" ng-model="condition.selected" >
 		    
 		  </label>
 		  <span>{{condition.name}}</span>
 		</div>
+
+		<h3>Visualization options</h3>
+
+		<div><button type="button" class="btn btn-link" ui-sref=".population">Population</button>  </div>
+		<div><button type="button" class="btn btn-link" ui-sref=".bars">Bars</button>  </div>
+		<div><button type="button" class="btn btn-link" ui-sref=".relative">Relative</button></div>
+
 
 		<!-- <div>
 			<label for="">
@@ -26,7 +35,7 @@
 
 	
 
-	<div class="col-md-8 col-sm-7 risk">
+	<!-- <div class="col-md-8 col-sm-7 risk">
 
 		<button type="button" class="active btn btn-risk">Risk of Ischaemic Stroke,<br>
 		ICH and SEE per 5 Years %
@@ -35,11 +44,11 @@
 		<button type="button" class="btn btn-risk pull-right">Risk of Major Bleeds<br>
 			per 5 Years %</button>
 		
-	</div>
+	</div> -->
 
-
+<!-- 
 	<div class="clearfix visible-xs-block"></div>
-	<div class="clearfix visible-sm-block"></div>
+	<div class="clearfix visible-sm-block"></div> -->
 		
 			
 
@@ -51,14 +60,14 @@
 	
 
 
-	<div class="col-md-6 " style="margin-top:43px">
+	<!-- <div class="col-md-6 " style="margin-top:43px">
 		<span>Visualization options</span>
 
 		<button type="button" class="btn btn-link" ui-sref=".population">Population</button> | 
 		<button type="button" class="btn btn-link" ui-sref=".bars">Bars</button> | 
 		<button type="button" class="btn btn-link" ui-sref=".relative">Relative</button>
 	</div>
-
+ -->
 
 
 
